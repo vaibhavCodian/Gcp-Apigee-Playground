@@ -1,0 +1,51 @@
+# Terraform state and backup files
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Python cache and virtualenv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+
+# Node.js
+node_modules/
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Apigee proxy bundles (build artifacts)
+*.zip
+
+# Environment and secrets
+.env
+.env.*
+*.secrets*
+
+# Misc
+*.bak
+*.swp
+*.swo
+
+# Ignore deployment outputs
+cloud-run-deployment/*.out
+gke-deployment/*.out
+
+# Ignore monitoring outputs
+05-Monitor-Deployment/*.out
+
+# Ignore local context or temp files
+Local-Context.md
+*.tmp
