@@ -33,5 +33,20 @@ subnets = {
 # GKE Clusters (example, can be empty if not needed)
 clusters = {}
 
-# Cloud Run Services (example, can be empty if not needed)
-services = {}
+services = {
+
+  # Example Cloud Run service for demonstration purposes
+  # This service is a simple "Hello World" application.
+  
+  hello-cr = {
+    name     = "hello-cloud-run-svc"
+    // This public image is for demonstration.
+    // In a real pipeline, you would build and push your own image.
+    image    = "gcr.io/cloudrun/hello" 
+    location = "asia-south1"
+    // 'allow_unauthenticated' is set to true for direct access initially,
+    // but Apigee will add the security layer.
+    allow_unauthenticated = true 
+    env = {}
+  }
+}

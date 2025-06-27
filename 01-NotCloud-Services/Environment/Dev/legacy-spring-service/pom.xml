@@ -1,0 +1,10 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" ...>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.notcloud.legacy</groupId>
+  <artifactId>legacy-spring-service</artifactId>
+  <version>0.1.0</version>
+  <packaging>jar</packaging>
+  <dependencies>
+    <!-- Add Spring Boot dependencies here -->
+  </dependencies>
+</project>

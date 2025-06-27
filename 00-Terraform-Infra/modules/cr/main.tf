@@ -1,13 +1,13 @@
-// Cloud Run module
-// Expects a map of objects for multiple service creation
+// In 00-Terraform-Infra/modules/cr/main.tf
 
 variable "services" {
   description = "Map of Cloud Run service objects."
-  type        = map(object({
-    name     = string
-    image    = string
-    location = string
-    env      = map(string)
+  type = map(object({
+    name                  = string
+    image                 = string
+    location              = string
+    allow_unauthenticated = optional(bool, false) # <-- ADD THIS LINE
+    env                   = map(string)
   }))
 }
 
@@ -31,6 +31,27 @@ resource "google_cloud_run_service" "services" {
   }
 }
 
+# --- Cloud Run Service IAM Policy ---
+resource "google_cloud_run_service_iam_member" "allow_public" {
+    for_each = {
+        for key, service in var.services: key => service
+        if service.allow_unauthenticated == true
+    }
+    location = google_cloud_run_service.services[each.key].location
+    project  = google_cloud_run_service.services[each.key].project
+    service  = google_cloud_run_service.services[each.key].name
+    role     = "roles/run.invoker"
+    member   = "allUsers"
+}
+
+# ------------------------------------
+# Outputs for Cloud Run Services
+# ------------------------------------
+
 output "service_names" {
-  value = [for s in google_cloud_run_service.services : s.name]
+  value = { for k, s in google_cloud_run_service.services : k => s.name }
+}
+
+output "service_urls" {
+  value = { for k, s in google_cloud_run_service.services : k => s.status[0].url }
 }

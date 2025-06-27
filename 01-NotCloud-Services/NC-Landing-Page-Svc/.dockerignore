@@ -1,0 +1,6 @@
+Dockerfile
+*.md
+*.log
+node_modules
+.git
+.gitignore

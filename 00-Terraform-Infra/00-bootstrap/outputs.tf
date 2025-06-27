@@ -44,3 +44,9 @@ output "subnet_self_links" {
   value       = module.subnets.subnet_self_links
   description = "Self-links of all provisioned subnets."
 }
+
+
+output "cloud_run_service_urls" {
+    description = "URLs of the deployed Cloud Run services."
+    value = module.cloud_run_services.service_urls
+}

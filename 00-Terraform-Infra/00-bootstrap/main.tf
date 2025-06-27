@@ -21,7 +21,9 @@ module "required_apis" {
     "apigee.googleapis.com",
     "servicenetworking.googleapis.com",
     "compute.googleapis.com",
-    "cloudkms.googleapis.com"
+    "cloudkms.googleapis.com",
+    "run.googleapis.com",             
+    "artifactregistry.googleapis.com" 
   ]
 }
 
