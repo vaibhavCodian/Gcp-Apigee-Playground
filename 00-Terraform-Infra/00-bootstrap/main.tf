@@ -74,9 +74,9 @@ module "gcs_buckets" {
   buckets = var.buckets
 }
 
-// ----------------------
-// GKE Clusters
-// ----------------------
+# // ----------------------
+# // GKE Clusters
+# // ----------------------
 
 module "gke_clusters" {
   source   = "../modules/gke"

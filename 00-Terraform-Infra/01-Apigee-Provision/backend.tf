@@ -2,7 +2,8 @@
 
 terraform {
   backend "gcs" {
-    bucket  = "apgiee-infra-gcs-bkt" 
-    prefix  = "terraform/state/apigee-provision"
+    bucket = "apgiee-infra-gcs-bkt-17523" 
+    prefix = "terraform/state/apigee-provision"
   }
 }
+

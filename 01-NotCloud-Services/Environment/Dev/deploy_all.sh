@@ -2,7 +2,7 @@
 # Walkthrough: Deploy all NotCloud Inc. microservices to Cloud Run in one go
 # Usage: bash deploy_all.sh
 
-set -e
+# set -e
 
 # ---- CONFIG ----
 PROJECT_ID=gcp-apigee-playground-f2j3lk4j

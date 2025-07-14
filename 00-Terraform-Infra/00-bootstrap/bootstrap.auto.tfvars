@@ -1,11 +1,11 @@
 # Example tfvars for 00-bootstrap
-project_id = "gcp-apigee-playground-f2j3lk4j"
+project_id = "gcp-apigee-playground-vs-17523"
 region    = "asia-south1"
 
 # GCS Buckets
 buckets = {
   apigee_infra_gcs_bkt = {
-    name          = "apgiee-infra-gcs-bkt"
+    name          = "apgiee-infra-gcs-bkt-17523"
     location      = "asia-south1"
     storage_class = "STANDARD"
     force_destroy = true
