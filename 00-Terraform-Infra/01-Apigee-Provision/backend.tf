@@ -2,8 +2,8 @@
 
 terraform {
   backend "gcs" {
-    bucket = "apgiee-infra-gcs-bkt-17523" 
-    prefix = "terraform/state/apigee-provision"
+    bucket = "peaceful-tide-tf-state-bkt-5234" 
+    prefix = "terraform/state/apigee-provision-2"
   }
 }
 
