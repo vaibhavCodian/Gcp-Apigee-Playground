@@ -36,3 +36,8 @@ APIGEE_PROXY_NAME="landing-page-proxy"
 APIGEE_PROXY_EXISTS=$(curl -s -o /dev/null -w "%{http_code}" \
 # Deploy Apigee Proxy
 echo -e "\n=== Deploying Apigee Proxy ==="
+https://apigee.googleapis.com/v1/projects/$PROJECT_ID/locations/$REGION/apis/${APIGEE_PROXY_NAME} | grep -q "200")
+if [ $? -ne 0 ]; then
+  echo -e "\n=== Deploying Apigee Proxy ==="
+    curl -X POST \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
